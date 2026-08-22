@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FinDoom Post Title Prompts</title>
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; text-align: center; padding: 40px 20px; background: #0f0f10; color: #e1e1e6; }
+    .container { max-width: 650px; margin: 0 auto; background: #18181b; padding: 30px; border-radius: 12px; border: 1px solid #27272a; box-shadow: 0 10px 25px rgba(0,0,0,0.5); }
+    #title-box { font-size: 1.3em; margin: 25px 0; padding: 20px; border: 2px dashed #9333ea; min-height: 60px; display: flex; align-items: center; justify-content: center; background: #09090b; border-radius: 8px; color: #f4f4f5; word-break: break-word; }
+    button { padding: 12px 28px; font-size: 1em; font-weight: bold; cursor: pointer; background: #9333ea; color: white; border: none; border-radius: 6px; transition: background 0.2s; }
+    button:hover { background: #7e22ce; }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h2>FinDoom Post Title Prompts</h2>
+    <div id="title-box">Click below to generate a title</div>
+    <button onclick="generateTitle()">Generate Title</button>
+  </div>
+
+  <script>
+   const templates = [
+      "{dom_act},{dom_noun},{dom_state},{expletive},{sub_act},{sub_noun},{sub_state}",
+      "{sub_act},{sub_noun},{sub_state},{expletive},{dom_act},{dom_noun},{dom_state}",
+      "{dom_act},{dom_noun},{dom_state},{sub_act},{sub_noun},{sub_state},{expletive}",
+      "{sub_act},{sub_noun},{sub_state},{dom_act},{dom_noun},{dom_state},{expletive}",
+      "{expletive},{dom_act},{dom_noun},{dom_state},{sub_act},{sub_noun},{sub_state}",
+      "{expletive},{sub_act},{sub_noun},{sub_state},{dom_act},{dom_noun},{dom_state}"
+      ];
+    
+const subActs = [" beg", " begging", " crave", " craving", " cry", " crying", " drink", " eat", " edge", " fail", " fetishize", " fund", " goon", " isolate", " jerk", " jerking", " kneel", " kneeling", " max", " piss", " relapse", " relapsing", " sacrifice", " send", " sending", " sexualize", " starve", " steal", " stealing", " stroke", " struggle", " tribute", " worship"];
+
+const subNouns = [" account", " alcohol", " bankruptcy", " cards", " chastity", " cock", " credit", " cum", " depravity", " depression", " desperation", " destruction", " divorce", " emptiness", " engagement", " finances", " food", " funds", " homelessness", " humiliation", " hundreds", " hunger", " isolation", " loan", " loneliness", " marriage", " misery", " mortgage", " nothing", " overdraft", " pain", " poverty", " rent", " sadness", " savings", " sin", " slavery", " tears", " thousands", " toilet", " torment", " trauma", " triggers", " wallet", " weakness", " wife"];
+
+const subStates = [" abused", " addicted", " bankrupt", " beta", " blackmailed", " brainwashed", " broke", " broken", " bullied", " caged", " cuck", " cucked", " cuckold", " damaged", " denied", " depraved", " desperate", " destroyed", " divorced", " drained", " drinking", " drunk", " edged", " empty", " enabled", " failed", " failure", " forced", " goontard", " homeless", " homewrecked", " humiliated", " hungry", " intoxicated", " isolated", " locked", " lonely", " loser", " milked", " mindfucked", " miserable", " nothing", " numb", " pathetic", " paypig", " pervert", " raped", " relapsed", " rinsed", " ruined", " sad", " scum", " sick", " simp", " slave", " starving", " trash", " traumatized", " used", " victim", " victimized", " violated", " wallet", " weak", " worthless"];
+
+const expletives = [" cunt", " fuck", " fucked", " fucking"]; 
+
+const domActs = [" abuse", " blackmail", " brainwash", " break", " bully", " bullying", " damage", " deny", " denies", " destroy", " drain", " enable", " encourage", " force", " hate", " homewreck", " humiliate", " hurt", " hypnotize", " manipulate", " milk", " mindfuck", " rape", " rinse", " ruin", " torment", " torture", " victimize", " violate"];
+
+const domNouns = [" blackmail", " blasphemy", " contract", " cruelty", " divinity", " greed", " hatred", " manipulation", " selfishness", " toxicity"]; 
+
+const domStates = [" brat", " cruel", " demon", " demoness", " devil", " devious", " divine", " evil", " findomme", " goddess", " greedy", " lord", " master", " mistress", " perfect", " satan", " selfish", " succubus", " superior", " toxic", " twisted", " unethical"];
+
+    function getRandom(arr) {
+      return arr[Math.floor(Math.random() * arr.length)];
+    }
+
+    function generateTitle() {
+      let title = getRandom(templates)
+        .replace("{expletive}", getRandom(expletives))
+        .replace("{sub_act}", getRandom(subActs))
+        .replace("{sub_noun}", getRandom(subNouns))
+        .replace("{sub_state}", getRandom(subStates))
+        .replace("{dom_act}", getRandom(domActs))
+        .replace("{dom_noun}", getRandom(domNouns))
+        .replace("{dom_state}", getRandom(domStates));
+        
+      document.getElementById("title-box").innerText = title;
+    }
+  </script>
+</body>
+</html>
